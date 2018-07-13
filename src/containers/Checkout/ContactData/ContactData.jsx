@@ -70,7 +70,7 @@ class ContactData extends Component {
         ingrediens: this.props.ings,
         price: this.props.totalPrice}
         
-        this.props.purchaseBurgerStart(order);
+        this.props.purchaseBurger(order);
         // axios.post('/orders.json', order)
         // .then( response => {
         //     this.setState({loading: false, purchasing: false});
@@ -117,16 +117,17 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
     return {
-      ings: state.ingrediens,
-      price: state.totalPrice
+      ings: state.burgerBuilder.ingrediens,
+      price: state.burgerBuilder.totalPrice,
+      loading: state.order.loading
     }
   }
 
 const mapDispatchToProps = distpatch => {
     return{
-        purchaseBurgerStart: (orderData) => distpatch(actionsOrder.purchaseBurgerStart(orderData))
+        purchaseBurger: (orderData) => distpatch(actionsOrder.purchaseBurger(orderData))
     }
   }
 
 
-  export default connect(mapStateToProps)( ContactData);
+  export default connect(mapStateToProps, mapDispatchToProps)( ContactData);
