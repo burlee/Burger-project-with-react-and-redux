@@ -81,7 +81,6 @@ class ContactData extends Component {
 
         // }
 
-        //Feature commit//////
     }
 
     render() {
