@@ -70,7 +70,6 @@ class ContactData extends Component {
         ingrediens: this.props.ings,
         price: this.props.totalPrice}
         
-
         this.props.purchaseBurgerStart(order);
         // axios.post('/orders.json', order)
         // .then( response => {
@@ -81,6 +80,8 @@ class ContactData extends Component {
         //     console.log(this.props.ingrediens)
 
         // }
+
+        //Feature commit
     }
 
     render() {
